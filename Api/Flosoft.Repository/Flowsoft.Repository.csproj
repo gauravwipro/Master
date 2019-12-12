@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <RootNamespace>Flowsoft.Repository</RootNamespace>
+    <AssemblyName>Flowsoft.Repository</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="interfaces\IRepository.cs" />
+    <Compile Remove="interfaces\IUnitOfWork.cs" />
+    <Compile Remove="repositories\Repository.cs" />
+    <Compile Remove="repositories\UnitOfWork.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.UnitOfWork" Version="2.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Flowsoft.Domain\Flowsoft.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

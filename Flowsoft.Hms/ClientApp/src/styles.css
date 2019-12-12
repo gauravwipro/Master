@@ -1,0 +1,11 @@
+/* You can add global styles to this file, and also import other style files */
+@import "assets/modules/bootstrap/css/bootstrap.min.css";
+@import "assets/modules/ionicons/css/ionicons.min.css";
+@import "assets/modules/fontawesome/web-fonts-with-css/css/fontawesome-all.min.css";
+@import "assets/modules/summernote/summernote-lite.css";
+@import "assets/modules/flag-icon-css/css/flag-icon.min.css";
+@import "assets/css/demo.css";
+@import "assets/css/style.css";
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import '~@fullcalendar/core/main.css';
+@import '~@fullcalendar/daygrid/main.css';

@@ -1,0 +1,13 @@
+E:\Projects\opdonline\Api\Flowsoft.DataServices\bin\Debug\netcoreapp2.2\Flowsoft.DataServices.deps.json
+E:\Projects\opdonline\Api\Flowsoft.DataServices\bin\Debug\netcoreapp2.2\Flowsoft.DataServices.dll
+E:\Projects\opdonline\Api\Flowsoft.DataServices\bin\Debug\netcoreapp2.2\Flowsoft.DataServices.pdb
+E:\Projects\opdonline\Api\Flowsoft.DataServices\bin\Debug\netcoreapp2.2\Flowsoft.Data.dll
+E:\Projects\opdonline\Api\Flowsoft.DataServices\bin\Debug\netcoreapp2.2\Flowsoft.Domain.dll
+E:\Projects\opdonline\Api\Flowsoft.DataServices\bin\Debug\netcoreapp2.2\Flowsoft.Data.pdb
+E:\Projects\opdonline\Api\Flowsoft.DataServices\bin\Debug\netcoreapp2.2\Flowsoft.Domain.pdb
+E:\Projects\opdonline\Api\Flowsoft.DataServices\obj\Debug\netcoreapp2.2\Flowsoft.DataServices.csprojResolveAssemblyReference.cache
+E:\Projects\opdonline\Api\Flowsoft.DataServices\obj\Debug\netcoreapp2.2\Flowsoft.DataServices.csproj.CoreCompileInputs.cache
+E:\Projects\opdonline\Api\Flowsoft.DataServices\obj\Debug\netcoreapp2.2\Flowsoft.DataServices.AssemblyInfoInputs.cache
+E:\Projects\opdonline\Api\Flowsoft.DataServices\obj\Debug\netcoreapp2.2\Flowsoft.DataServices.AssemblyInfo.cs
+E:\Projects\opdonline\Api\Flowsoft.DataServices\obj\Debug\netcoreapp2.2\Flowsoft.DataServices.dll
+E:\Projects\opdonline\Api\Flowsoft.DataServices\obj\Debug\netcoreapp2.2\Flowsoft.DataServices.pdb

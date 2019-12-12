@@ -1,0 +1,47 @@
+ <!-- Breadcrumbs-->
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="#">Dashboard</a>
+  </li>
+  <li class="breadcrumb-item active">Departments</li>
+</ol>
+<!-- DataTables Example -->
+<div class="card mb-3">
+  <div class="card-header">
+    <i class="fas fa-table"></i>
+    <a [routerLink]="['create-department']">Create New</a>
+  </div>
+  <div id="dataTable_wrapper" class="card-body">
+    <div class="table-responsive">
+      <table *ngIf="departmentList" class="table table-striped" id="dataTable" width="100%" cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
+        <thead>
+          <tr>
+            <th>First Name</th>
+            <th>Last name</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr *ngFor="let department of departmentList | paginate: { itemsPerPage: 10, currentPage: p }">
+            <td>{{ department.name }}</td>
+            <td>{{ department.description }}</td>
+            <td>
+              <a [routerLink]="['department/edit/', department.id]">Edit</a> |
+              <a [routerLink]="" (click)="delete(department.id)">Delete</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 col-md-7">
+        <div class="dataTables_paginate paging_simple_numbers" id="dataTable_paginate">
+          <pagination-controls (pageChange)="p = $event"></pagination-controls>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>

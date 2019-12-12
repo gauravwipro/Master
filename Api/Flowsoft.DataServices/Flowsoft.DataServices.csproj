@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Flosoft.Repository\Flowsoft.Repository.csproj" />
+    <ProjectReference Include="..\Flowsoft.Data\Flowsoft.Data.csproj" />
+    <ProjectReference Include="..\Flowsoft.Domain\Flowsoft.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,11 @@
+E:\Projects\opdonline\Api\Flosoft.Repository\bin\Debug\netcoreapp2.2\Flowsoft.Repository.deps.json
+E:\Projects\opdonline\Api\Flosoft.Repository\bin\Debug\netcoreapp2.2\Flowsoft.Repository.dll
+E:\Projects\opdonline\Api\Flosoft.Repository\obj\Debug\netcoreapp2.2\Flowsoft.Repository.csproj.CoreCompileInputs.cache
+E:\Projects\opdonline\Api\Flosoft.Repository\obj\Debug\netcoreapp2.2\Flowsoft.Repository.AssemblyInfoInputs.cache
+E:\Projects\opdonline\Api\Flosoft.Repository\obj\Debug\netcoreapp2.2\Flowsoft.Repository.AssemblyInfo.cs
+E:\Projects\opdonline\Api\Flosoft.Repository\obj\Debug\netcoreapp2.2\Flowsoft.Repository.csprojResolveAssemblyReference.cache
+E:\Projects\opdonline\Api\Flosoft.Repository\bin\Debug\netcoreapp2.2\Flowsoft.Repository.pdb
+E:\Projects\opdonline\Api\Flosoft.Repository\bin\Debug\netcoreapp2.2\Flowsoft.Domain.dll
+E:\Projects\opdonline\Api\Flosoft.Repository\bin\Debug\netcoreapp2.2\Flowsoft.Domain.pdb
+E:\Projects\opdonline\Api\Flosoft.Repository\obj\Debug\netcoreapp2.2\Flowsoft.Repository.dll
+E:\Projects\opdonline\Api\Flosoft.Repository\obj\Debug\netcoreapp2.2\Flowsoft.Repository.pdb
