@@ -7,88 +7,38 @@ using System.Linq;
 using System.Threading.Tasks;
 using Flowsoft.Data;
 using Flowsoft.Domain.Models;
+using Flowsoft.Repository.interfaces;
 
 namespace Flowsoft.DataServices.Services
 {
-    public class PatientService: IPatientService
+    public class PatientService : IPatientService
     {
-        IDataContext dataContext;
-        public PatientService(IDataContext _dataContext)
+        private IPatientRepository _patientRepository;
+        public PatientService(IPatientRepository patientRepository)
         {
-            dataContext = _dataContext;
+            _patientRepository = patientRepository;
         }
         public int Add(Patients obj)
         {
-            try
-            {
-                dataContext.Patients.Add(obj);
-                dataContext.SaveChanges();
-                return 1;
-            }
-            catch(Exception ex)
-            {
-                return 0;
-            }
+            return _patientRepository.Save(obj);
         }
         public int Delete(int id)
         {
-            try
-            {
-                Patients patient = dataContext.Patients.Find(id);
-                dataContext.Patients.Remove(patient);
-                dataContext.SaveChanges();
-                return 1;
-            }
-            catch
-            {
-                return 0;
-            }
+            return _patientRepository.Delete(id);
         }
-        public Patients Get(int id)
+        public IEnumerable<Patients> Get()
         {
-            try
-            {
-                Patients pat = dataContext.Patients.Find(id);
-                return pat;
-            }
-            catch
-            {
-                throw;
-            }
+            return _patientRepository.Get();
         }
-        public IEnumerable<Patients> GetAll()
+
+        public Patients GetById(int id)
         {
-            try
-            {
-                return dataContext.Patients.ToList();
-            }
-            catch
-            {
-                throw;
-            }
+            return _patientRepository.GetById(id);
         }
+
         public int Update(Patients obj)
         {
-            try
-            {
-                var patient = dataContext.Patients.SingleOrDefault(p => p.Id == obj.Id);
-                patient.FirstName = obj.FirstName;
-                patient.Address = obj.Address;
-                patient.AdhaarCard = obj.AdhaarCard;
-                patient.City = obj.City;
-                patient.EmergencyNumber = obj.EmergencyNumber;
-                patient.LastName = obj.LastName;
-                patient.PhoneNumber = obj.PhoneNumber;
-                patient.StateId = obj.StateId;
-                patient.GenderId = obj.GenderId;
-                patient.VoterCard = obj.VoterCard;
-                dataContext.SaveChanges();
-                return 1;
-            }
-            catch
-            {
-                throw;
-            }
+            return _patientRepository.Update(obj);
         }
     }
 }

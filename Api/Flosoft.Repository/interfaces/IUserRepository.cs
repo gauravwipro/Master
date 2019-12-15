@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Flowsoft.Repository.interfaces
 {
-    interface IUserRepository : IBaseRepository<Users>
+    public interface IUserRepository : IBaseRepository<Users>
     {
     }
 }

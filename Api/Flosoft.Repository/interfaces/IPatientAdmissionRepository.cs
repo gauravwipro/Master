@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Flowsoft.Repository.interfaces
 {
-    interface IPatientAdmissionRepository: IBaseRepository<PatientAdmission>
+   public interface IPatientAdmissionRepository: IBaseRepository<PatientAdmission>
     {
     }
 }

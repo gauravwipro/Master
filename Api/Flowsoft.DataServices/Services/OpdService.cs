@@ -2,6 +2,7 @@
 using Flowsoft.DataServices.Interfaces;
 using Flowsoft.Domain.Models;
 using Flowsoft.Domain.Viewmodels;
+using Flowsoft.Repository.interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,45 +12,37 @@ namespace Flowsoft.DataServices.Services
 {
     public class OpdService : IOpdService
     {
-        IDataContext dataContext;
-        public OpdService(IDataContext _dataContext)
+        IOpdRepository _opdRepository;
+        IDepartmentRepository _departmentRepository;
+        IPatientRepository _patientRepository;
+        IPatientAdmissionRepository _patientAdmissionRepository;
+        IDoctorRepository _doctorRepository;
+        public OpdService(IOpdRepository opdRepository, IDepartmentRepository departmentRepository,
+            IPatientRepository patientRepository, IPatientAdmissionRepository patientAdmissionRepository,
+            IDoctorRepository doctorRepository)
         {
-            dataContext = _dataContext;
+            _opdRepository = opdRepository;
+            _departmentRepository = departmentRepository;
+            _patientAdmissionRepository = patientAdmissionRepository;
+            _patientRepository = patientRepository;
+            _doctorRepository = doctorRepository;
         }
+
         public int Add(Opds obj)
         {
-            try
-            {
-                dataContext.Opds.Add(obj);
-                dataContext.SaveChanges();
-                return 1;
-            }
-            catch
-            {
-                return 0;
-            }
+            return _opdRepository.Save(obj);
         }
 
         public int Delete(int id)
         {
-            try
-            {
-                Opds opd = dataContext.Opds.Find(id);
-                dataContext.Opds.Remove(opd);
-                dataContext.SaveChanges();
-                return 1;
-            }
-            catch
-            {
-                return 0;
-            }
+            return _opdRepository.Delete(id);
         }
 
         public int GenerateToken(int doctorId, DateTime appointmentDate)
         {
             try
             {
-                List<Opds> opds = dataContext.Opds.Where(p => p.DoctorId == doctorId && DateTime.Compare(p.OpdDate.Date, appointmentDate.Date) == 0).ToList();
+                List<Opds> opds = _opdRepository.Get().Where(p => p.DoctorId == doctorId && DateTime.Compare(p.OpdDate.Date, appointmentDate.Date) == 0).ToList();
                 if (opds.Count > 0)
                     return opds.Max(p => p.TokenNumber) + 1;
                 else
@@ -61,51 +54,30 @@ namespace Flowsoft.DataServices.Services
             }
         }
 
-        public Opds Get(int id)
+        public IEnumerable<Opds> Get()
         {
-            try
-            {
-                Opds opd = dataContext.Opds.Find(id);
-                return opd;
-            }
-            catch
-            {
-                throw;
-            }
+            return _opdRepository.Get();
         }
 
-        public IEnumerable<Opds> GetAll()
+        public Opds GetById(int id)
         {
-            try
-            {
-                return dataContext.Opds.ToList();
-            }
-            catch
-            {
-                throw;
-            }
+            return _opdRepository.GetById(id);
         }
 
         public IEnumerable<Opds> GetByPatient(int patientId)
         {
-            try
-            {
-                return dataContext.Opds.Where(p => p.PatientId == patientId).ToList();
-            }
-            catch
-            {
-                throw;
-            }
+            return _opdRepository.Get().Where(p => p.PatientId == patientId).ToList();
         }
+
 
         public IEnumerable<DailyAppointments> GetDailyAppointments(int doctorId, DateTime appointmentDate)
         {
             try
             {
-                return (from opd in dataContext.Opds
-                        join patient in dataContext.Patients on opd.PatientId equals patient.Id
-                        join doct in dataContext.Doctors on opd.DoctorId equals doct.Id
-                        join depart in dataContext.Departments on doct.DepartmentId equals depart.Id
+                return (from opd in _opdRepository.Get()
+                        join patient in _patientRepository.Get() on opd.PatientId equals patient.Id
+                        join doct in _doctorRepository.Get() on opd.DoctorId equals doct.Id
+                        join depart in _departmentRepository.Get() on doct.DepartmentId equals depart.Id
                         where DateTime.Compare(opd.OpdDate.Date, appointmentDate.Date) == 0 && opd.DoctorId == doctorId
                         select new DailyAppointments
                         {
@@ -114,8 +86,8 @@ namespace Flowsoft.DataServices.Services
                             OpdNotes = opd.OpdNotes,
                             Prescription = opd.Prescription,
                             AppointmentDate = opd.OpdDate,
-                            Count = (from opd in dataContext.Opds
-                                     join doct in dataContext.Doctors on opd.DoctorId equals doct.Id
+                            Count = (from opd in _opdRepository.Get()
+                                     join doct in _doctorRepository.Get() on opd.DoctorId equals doct.Id
                                      where DateTime.Compare(opd.OpdDate.Date, appointmentDate.Date) == 0
                                      select opd).Count(),
                             DepartmentName = depart.Name,
@@ -134,7 +106,7 @@ namespace Flowsoft.DataServices.Services
         {
             try
             {
-                return (from opds in dataContext.Opds
+                return (from opds in _opdRepository.Get()
                         where opds.Id == id
                         select new OpdDoctorUpdateData
                         {
@@ -153,7 +125,7 @@ namespace Flowsoft.DataServices.Services
         {
             try
             {
-                return from opd in dataContext.Opds
+                return from opd in _opdRepository.Get()
                        where opd.DoctorId == doctorId
                        group opd by opd.OpdDate.Date into newGroup
                        orderby newGroup.Key
@@ -174,17 +146,17 @@ namespace Flowsoft.DataServices.Services
         {
             try
             {
-                var opdDetail = (from opds in dataContext.Opds
+                var opdDetail = (from opds in _opdRepository.Get()
                                  where opds.Id == id
                                  select new
                                  {
                                      patientId = opds.PatientId
                                  }).SingleOrDefault();
 
-                return (from opds in dataContext.Opds
-                        join doctors in dataContext.Doctors on opds.DoctorId equals doctors.Id
-                        join department in dataContext.Departments on opds.DepartmentId equals department.Id
-                        join patient in dataContext.Patients on opds.PatientId equals patient.Id
+                return (from opds in _opdRepository.Get()
+                        join doctors in _doctorRepository.Get() on opds.DoctorId equals doctors.Id
+                        join department in _departmentRepository.Get() on opds.DepartmentId equals department.Id
+                        join patient in _patientRepository.Get() on opds.PatientId equals patient.Id
                         where opds.PatientId == opdDetail.patientId && opds.OpdDate.Date < DateTime.Now.Date
                         select new OpdDetails
                         {
@@ -209,10 +181,10 @@ namespace Flowsoft.DataServices.Services
         {
             try
             {
-                return (from opds in dataContext.Opds
-                        join doctors in dataContext.Doctors on opds.DoctorId equals doctors.Id
-                        join department in dataContext.Departments on opds.DepartmentId equals department.Id
-                        join patient in dataContext.Patients on opds.PatientId equals patient.Id
+                return (from opds in _opdRepository.Get()
+                        join doctors in _doctorRepository.Get() on opds.DoctorId equals doctors.Id
+                        join department in _departmentRepository.Get() on opds.DepartmentId equals department.Id
+                        join patient in _patientRepository.Get() on opds.PatientId equals patient.Id
                         where opds.PatientId == patientId && DateTime.Compare(opds.OpdDate.Date, DateTime.Now.Date) == 0
                         select new OpdDetails
                         {
@@ -235,35 +207,20 @@ namespace Flowsoft.DataServices.Services
 
         public int Save(OpdDoctorUpdateData dailyAppointments)
         {
-            try
-            {
-                var opd = dataContext.Opds.SingleOrDefault(p => p.Id == dailyAppointments.OpdId);
-                opd.OpdNotes = dailyAppointments.OpdNotes;
-                opd.Prescription = dailyAppointments.Prescription;
-                opd.IsChecked = true;
-                dataContext.SaveChanges();
-                return 1;
-            }
-            catch
-            {
-                throw;
-            }
+            var opd = _opdRepository.Get().SingleOrDefault(p => p.Id == dailyAppointments.OpdId);
+            opd.OpdNotes = dailyAppointments.OpdNotes;
+            opd.Prescription = dailyAppointments.Prescription;
+            opd.IsChecked = true;
+            return _opdRepository.Update(opd);
         }
 
         public int Update(Opds obj)
         {
-            try
-            {
-                var opd = dataContext.Opds.SingleOrDefault(p => p.Id == obj.Id);
-                opd.OpdNotes = obj.OpdNotes;
-                opd.Prescription = obj.Prescription;
-                dataContext.SaveChanges();
-                return 1;
-            }
-            catch
-            {
-                throw;
-            }
+
+            var opd = _opdRepository.Get().SingleOrDefault(p => p.Id == obj.Id);
+            opd.OpdNotes = obj.OpdNotes;
+            opd.Prescription = obj.Prescription;
+            _opdRepository.Update(opd);
         }
     }
 }

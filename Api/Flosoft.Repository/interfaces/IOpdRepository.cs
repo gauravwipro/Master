@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Flowsoft.Repository.interfaces
 {
-    interface IOpdRepository: IBaseRepository<Opds>
+    public interface IOpdRepository: IBaseRepository<Opds>
     {
     }
 }

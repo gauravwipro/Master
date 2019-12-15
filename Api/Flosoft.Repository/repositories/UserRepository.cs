@@ -3,34 +3,52 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using Flowsoft.Domain.Models;
+using Microsoft.EntityFrameworkCore;
+using System.Linq;
 
 namespace Flowsoft.Repository.repositories
 {
-    class UserRepository : IUserRepository
+   public class UserRepository : IUserRepository
     {
+        IUnitOfWork _unitOfWork;
+        public UserRepository(IUnitOfWork unitOfWork)
+        {
+            _unitOfWork = unitOfWork;
+        }
+
         public int Delete(int id)
         {
-            throw new NotImplementedException();
+            var patient = _unitOfWork.GetRepository<User>().GetFirstOrDefault(predicate: x => x.Id.Equals(id), orderBy: source => source.OrderByDescending(b => b.Id));
+            _unitOfWork.GetRepository<Users>().Delete(patient);
+            return _unitOfWork.SaveChanges();
         }
 
         public List<Users> Get()
         {
-            throw new NotImplementedException();
+            return _unitOfWork.GetRepository<Users>().GetPagedList().Items.ToList();
         }
 
         public Users GetById(int id)
         {
-            throw new NotImplementedException();
+            return _unitOfWork.GetRepository<Users>().GetFirstOrDefault(predicate: x => x.Id.Equals(id), orderBy: source => source.OrderByDescending(b => b.Id));
+            ;
         }
 
         public int Save(Users entity)
         {
-            throw new NotImplementedException();
+            _unitOfWork.GetRepository<Users>().Insert(entity);
+            return _unitOfWork.SaveChanges();
         }
 
+      
         public int Update(Users entity)
         {
-            throw new NotImplementedException();
+            _unitOfWork.GetRepository<Users>().Update(entity);
+            return _unitOfWork.SaveChanges();
+
         }
+
+
+       
     }
 }

@@ -33,7 +33,7 @@ namespace Flowsoft.Hms.Controllers
         [Route("api/Department/Create")]
         public int Create([FromBody] Departments department)
         {
-            return departmentService.Save(department);
+            return departmentService.Add(department);
         }
 
         [HttpGet]

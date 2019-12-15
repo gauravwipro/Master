@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Flowsoft.Repository.interfaces
 {
-    interface IGenderRepository : IBaseRepository<Genders>
+    public interface IGenderRepository : IBaseRepository<Genders>
     {
     }
 }

@@ -65,3 +65,9 @@ E:\Projects\opdonline\Api\Flowsoft.Service\obj\Debug\netcoreapp2.2\Flowsoft.Serv
 E:\Projects\opdonline\Api\Flowsoft.Service\obj\Debug\netcoreapp2.2\Flowsoft.Service.pdb
 E:\Projects\opdonline\Api\Flowsoft.Service\bin\Debug\netcoreapp2.2\Flowsoft.Repository.dll
 E:\Projects\opdonline\Api\Flowsoft.Service\bin\Debug\netcoreapp2.2\Flowsoft.Repository.pdb
+C:\Gaurav\Code\Api\Flowsoft.Service\obj\Debug\netcoreapp2.2\Flowsoft.Service.csprojAssemblyReference.cache
+C:\Gaurav\Code\Api\Flowsoft.Service\obj\Debug\netcoreapp2.2\Flowsoft.Service.RazorAssemblyInfo.cache
+C:\Gaurav\Code\Api\Flowsoft.Service\obj\Debug\netcoreapp2.2\Flowsoft.Service.RazorAssemblyInfo.cs
+C:\Gaurav\Code\Api\Flowsoft.Service\obj\Debug\netcoreapp2.2\Flowsoft.Service.AssemblyInfoInputs.cache
+C:\Gaurav\Code\Api\Flowsoft.Service\obj\Debug\netcoreapp2.2\Flowsoft.Service.AssemblyInfo.cs
+C:\Gaurav\Code\Api\Flowsoft.Service\obj\Debug\netcoreapp2.2\Flowsoft.Service.pdb

@@ -7,28 +7,33 @@ using System.Linq;
 using System.Threading.Tasks;
 using Flowsoft.Data;
 using Flowsoft.Domain.Models;
+using Flowsoft.Repository.interfaces;
 
 namespace Flowsoft.DataServices.Services
 {
     public class DoctorService : IDoctorService
     {
-        public DoctorService()
+
+        private IDoctorRepository _doctorRepository;
+        public DoctorService(IDoctorRepository doctorRepository)
         {
+            _doctorRepository = doctorRepository;
         }
 
         public int Add(Doctors obj)
         {
-            throw new NotImplementedException();
+          return  _doctorRepository.Save(obj);
+
         }
 
         public int Delete(int id)
         {
-            throw new NotImplementedException();
+            return _doctorRepository.Delete(id);
         }
 
         public IEnumerable<Doctors> Get()
         {
-            throw new NotImplementedException();
+            return _doctorRepository.Get();
         }
 
         public IEnumerable<Doctors> GetByDepartment(int id)
@@ -38,12 +43,12 @@ namespace Flowsoft.DataServices.Services
 
         public Doctors GetById(int id)
         {
-            throw new NotImplementedException();
+            return _doctorRepository.GetById(id);
         }
 
         public int Update(Doctors obj)
         {
-            throw new NotImplementedException();
+            return _doctorRepository.Update(obj);
         }
     }
 }

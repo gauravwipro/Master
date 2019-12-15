@@ -7,85 +7,47 @@ using System.Linq;
 using System.Threading.Tasks;
 using Flowsoft.Data;
 using Flowsoft.Domain.Models;
+using Flowsoft.Repository.interfaces;
 
 namespace Flowsoft.DataServices.Services
 {
     public class StateService : IStateService
     {
-        IDataContext dataContext;
-        public StateService(IDataContext _dataContext)
+        private IStateRepository _stateRepository;
+        public StateService(IStateRepository stateRepository)
         {
-            dataContext = _dataContext;
+            _stateRepository = stateRepository;
         }
 
         public int Add(States obj)
         {
-            try
-            {
-                dataContext.States.Add(obj);
-                dataContext.SaveChanges();
-                return 1;
-            }
-            catch (Exception ex)
-            {
-                return 0;
-            }
+            return _stateRepository.Save(obj);
         }
 
         public int Delete(int id)
         {
-            try
-            {
-                States state = dataContext.States.Find(id);
-                dataContext.States.Remove(state);
-                dataContext.SaveChanges();
-                return 1;
-            }
-            catch
-            {
-                throw;
-            }
+            return _stateRepository.Delete(id);
         }
 
         public States Get(int id)
         {
-            try
-            {
-                States state = dataContext.States.Find(id);
-                return state;
-            }
-            catch
-            {
-                throw;
-            }
+            return _stateRepository.GetById(id);
         }
 
-        public IEnumerable<States> GetAll()
+        public IEnumerable<States> Get()
         {
-            try
-            {
-                return  dataContext.States.ToList();
-            }
-            catch
-            {
-                throw;
-            }
+            return _stateRepository.Get();
         }
 
+
+        public States GetById(int id)
+        {
+            return _stateRepository.GetById(id);
+        }
 
         public int Update(States obj)
         {
-            try
-            {
-                var _state = dataContext.States.SingleOrDefault(p => p.Id == obj.Id);
-                _state.Name = obj.Name;
-                dataContext.SaveChanges();
-                return 1;
-            }
-            catch
-            {
-                throw;
-            }
+            return _stateRepository.Update(obj);
         }
     }
 }

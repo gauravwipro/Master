@@ -9,3 +9,14 @@ E:\Projects\opdonline\Api\Flowsoft.Data\obj\Debug\netcoreapp2.2\Flowsoft.Data.As
 E:\Projects\opdonline\Api\Flowsoft.Data\obj\Debug\netcoreapp2.2\Flowsoft.Data.AssemblyInfo.cs
 E:\Projects\opdonline\Api\Flowsoft.Data\obj\Debug\netcoreapp2.2\Flowsoft.Data.dll
 E:\Projects\opdonline\Api\Flowsoft.Data\obj\Debug\netcoreapp2.2\Flowsoft.Data.pdb
+C:\Gaurav\Code\Api\Flowsoft.Data\bin\Debug\netcoreapp2.2\Flowsoft.Data.deps.json
+C:\Gaurav\Code\Api\Flowsoft.Data\bin\Debug\netcoreapp2.2\Flowsoft.Data.dll
+C:\Gaurav\Code\Api\Flowsoft.Data\bin\Debug\netcoreapp2.2\Flowsoft.Data.pdb
+C:\Gaurav\Code\Api\Flowsoft.Data\bin\Debug\netcoreapp2.2\Flowsoft.Domain.dll
+C:\Gaurav\Code\Api\Flowsoft.Data\bin\Debug\netcoreapp2.2\Flowsoft.Domain.pdb
+C:\Gaurav\Code\Api\Flowsoft.Data\obj\Debug\netcoreapp2.2\Flowsoft.Data.csprojAssemblyReference.cache
+C:\Gaurav\Code\Api\Flowsoft.Data\obj\Debug\netcoreapp2.2\Flowsoft.Data.AssemblyInfoInputs.cache
+C:\Gaurav\Code\Api\Flowsoft.Data\obj\Debug\netcoreapp2.2\Flowsoft.Data.AssemblyInfo.cs
+C:\Gaurav\Code\Api\Flowsoft.Data\obj\Debug\netcoreapp2.2\Flowsoft.Data.csproj.CopyComplete
+C:\Gaurav\Code\Api\Flowsoft.Data\obj\Debug\netcoreapp2.2\Flowsoft.Data.dll
+C:\Gaurav\Code\Api\Flowsoft.Data\obj\Debug\netcoreapp2.2\Flowsoft.Data.pdb

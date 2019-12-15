@@ -9,40 +9,35 @@ using System.Text;
 using System.Threading.Tasks;
 using Flowsoft.Domain.Models;
 using Flowsoft.Data;
-
+using Flowsoft.Repository.interfaces;
 namespace Flowsoft.DataServices.Services
 {
     public class UserService : IUserService
     {
-        IDataContext dataContext;
-        public UserService(IDataContext _dataContext)
+        private IUserRepository _userRepository;
+        public UserService(IUserRepository userRepository)
         {
-            dataContext = _dataContext;
+            _userRepository = userRepository;
         }
 
         public Users Authenticate(string username, string password)
         {
-            var user = dataContext.Users.SingleOrDefault(x => x.Username == username && x.Password == password);
+            var user = _userRepository.Get().SingleOrDefault(x => x.Username == username && x.Password == password);
             if (user != null)
-                user.Role = dataContext.Roles.SingleOrDefault(x => x.Id == user.RoleId);
+                user.Role = user.Role;
             return user;
         }
 
         public IEnumerable<Users> GetAll()
         {
-            var user = dataContext.Users.ToList();
-
-            return user;
+            return _userRepository.Get();
         }
-
         public Users GetById(int id)
         {
-            var user = dataContext.Users.FirstOrDefault(x => x.Id == id);
-
+            var user = _userRepository.Get().FirstOrDefault(x => x.Id == id);
             // return user without password
             if (user != null)
                 user.Password = null;
-
             return user;
         }
     }

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Flowsoft.Repository.interfaces
 {
-    interface IStateRepository : IBaseRepository<States>
+    public interface IStateRepository : IBaseRepository<States>
     {
     }
 }

@@ -28,21 +28,14 @@ namespace Flowsoft.DataServices.Services
             throw new NotImplementedException();
         }
 
-        public Genders Get(int id)
+        public IEnumerable<Genders> Get()
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Genders> GetAll()
+        public Genders GetById(int id)
         {
-            try
-            {
-                return dataContext.Genders.ToList();
-            }
-            catch
-            {
-                throw;
-            }
+            throw new NotImplementedException();
         }
 
         public int Update(Genders obj)
