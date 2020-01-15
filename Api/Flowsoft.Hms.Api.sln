@@ -15,6 +15,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Flowsoft.Repository", "Flos
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "FlowSoft.Database", "FlowSoft.Database\FlowSoft.Database.sqlproj", "{3605732C-5BB2-4187-A4CE-01922ACB39AF}"
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "FS.Database.Data", "FS.Database.Data\FS.Database.Data.sqlproj", "{6A90FEFD-6D21-4232-886F-6F6D34B5FE71}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -103,6 +105,24 @@ Global
 		{3605732C-5BB2-4187-A4CE-01922ACB39AF}.Release|x86.ActiveCfg = Release|Any CPU
 		{3605732C-5BB2-4187-A4CE-01922ACB39AF}.Release|x86.Build.0 = Release|Any CPU
 		{3605732C-5BB2-4187-A4CE-01922ACB39AF}.Release|x86.Deploy.0 = Release|Any CPU
+		{6A90FEFD-6D21-4232-886F-6F6D34B5FE71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A90FEFD-6D21-4232-886F-6F6D34B5FE71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A90FEFD-6D21-4232-886F-6F6D34B5FE71}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{6A90FEFD-6D21-4232-886F-6F6D34B5FE71}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{6A90FEFD-6D21-4232-886F-6F6D34B5FE71}.Debug|x64.Build.0 = Debug|Any CPU
+		{6A90FEFD-6D21-4232-886F-6F6D34B5FE71}.Debug|x64.Deploy.0 = Debug|Any CPU
+		{6A90FEFD-6D21-4232-886F-6F6D34B5FE71}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{6A90FEFD-6D21-4232-886F-6F6D34B5FE71}.Debug|x86.Build.0 = Debug|Any CPU
+		{6A90FEFD-6D21-4232-886F-6F6D34B5FE71}.Debug|x86.Deploy.0 = Debug|Any CPU
+		{6A90FEFD-6D21-4232-886F-6F6D34B5FE71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A90FEFD-6D21-4232-886F-6F6D34B5FE71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A90FEFD-6D21-4232-886F-6F6D34B5FE71}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{6A90FEFD-6D21-4232-886F-6F6D34B5FE71}.Release|x64.ActiveCfg = Release|Any CPU
+		{6A90FEFD-6D21-4232-886F-6F6D34B5FE71}.Release|x64.Build.0 = Release|Any CPU
+		{6A90FEFD-6D21-4232-886F-6F6D34B5FE71}.Release|x64.Deploy.0 = Release|Any CPU
+		{6A90FEFD-6D21-4232-886F-6F6D34B5FE71}.Release|x86.ActiveCfg = Release|Any CPU
+		{6A90FEFD-6D21-4232-886F-6F6D34B5FE71}.Release|x86.Build.0 = Release|Any CPU
+		{6A90FEFD-6D21-4232-886F-6F6D34B5FE71}.Release|x86.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

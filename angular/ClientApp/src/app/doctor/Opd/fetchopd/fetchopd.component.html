@@ -1,0 +1,28 @@
+<div class="container-fluid">
+  <!-- Breadcrumbs-->
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <a href="#">Dashboard</a>
+    </li>
+    <li class="breadcrumb-item active">OPD  Details</li>
+  </ol>
+
+  <!-- DataTables Example -->
+  <div class="card mb-3">
+    <div class="card-header">
+    </div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <full-calendar defaultView="dayGridMonth" [plugins]="calendarPlugins"
+                        deepChangeDetection="true" [events]="calendarEvents" (dateClick)="handleDateClick($event)" 
+                       ></full-calendar>
+      </div>
+    </div>
+    <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+  </div>
+
+  <p class="small text-center text-muted my-5">
+    <em>More table examples coming soon...</em>
+  </p>
+
+</div>

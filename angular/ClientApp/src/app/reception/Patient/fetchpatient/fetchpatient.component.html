@@ -1,0 +1,68 @@
+<div class="container-fluid">
+    <!-- Breadcrumbs-->
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="#">Dashboard</a>
+        </li>
+        <li class="breadcrumb-item active">Patients</li>
+    </ol>
+
+    <!-- DataTables Example -->
+    <div class="card mb-3">
+        <div class="card-header">
+            <i class="fas fa-table"></i>
+            <a [routerLink]="['create-patient']">Create New</a>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap4">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <table *ngIf="patientList" class="table table-bordered dataTable" id="dataTable" width="100%" cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
+                                <thead>
+                                  <tr>
+                                    <th>First Name</th>
+                                    <th>Last name</th>
+                                    <th>Address</th>
+                                    <th>City</th>
+                                    <th>Phone Number</th>
+                                    <th>Emergency Number</th>
+                                    <th></th>
+                                  </tr>
+                                </thead>
+                                    
+                                <tbody>
+                                    <tr *ngFor="let patient of patientList | paginate: { itemsPerPage: 10, currentPage: p }">
+                                        <td>{{ patient.firstName }}</td>
+                                        <td>{{ patient.lastName }}</td>
+                                        <td>{{ patient.address }}</td>
+                                        <td>{{ patient.city }}</td>
+                                        <td>{{ patient.phoneNumber }}</td>
+                                        <td>{{ patient.emergencyNumber }}</td>
+                                        <td>
+                                            <a [routerLink]="['patient/edit/', patient.id]">Edit</a> |
+                                            <a [routerLink]="" (click)="delete(patient.id)">Delete</a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12 col-md-7">
+                            <div class="dataTables_paginate paging_simple_numbers" id="dataTable_paginate">
+                                <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+    </div>
+
+    <p class="small text-center text-muted my-5">
+        <em>More table examples coming soon...</em>
+    </p>
+
+</div>

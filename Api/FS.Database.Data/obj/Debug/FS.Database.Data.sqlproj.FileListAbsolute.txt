@@ -1,0 +1,9 @@
+E:\HMS\Api\FS.Database.Data\bin\Debug\FS.Database.Data.dacpac
+E:\HMS\Api\FS.Database.Data\obj\Debug\Model.xml
+E:\HMS\Api\FS.Database.Data\obj\Debug\refactor.xml
+E:\HMS\Api\FS.Database.Data\obj\Debug\postdeploy.sql
+E:\HMS\Api\FS.Database.Data\obj\Debug\predeploy.sql
+E:\HMS\Api\FS.Database.Data\obj\Debug\FS.Database.Data.dll
+E:\HMS\Api\FS.Database.Data\obj\Debug\FS.Database.Data.pdb
+E:\HMS\Api\FS.Database.Data\bin\Debug\FS.Database.Data.dll
+E:\HMS\Api\FS.Database.Data\bin\Debug\FS.Database.Data.pdb

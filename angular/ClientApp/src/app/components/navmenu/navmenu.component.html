@@ -1,0 +1,84 @@
+<ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+<li class="nav-item" [routerLinkActive]="['link-active']" *ngIf="isAdmin">
+  <a  [routerLink]="['/home']" class="nav-link">
+    <i class="nav-icon fas fa-copy"></i>
+    <p>
+      Home
+    </p>
+  </a>
+</li>
+
+
+  
+  <li  class="nav-item" [routerLinkActive]="['link-active']" *ngIf="isAdmin">
+    <a [routerLink]="['department']">
+      <i class="nav-icon fas fa-copy"></i>
+    <p>
+      Departments
+    </p>
+    </a>
+    <ul>
+      <li>
+        <a [routerLink]="['department/create-department']">
+          Create
+        </a>
+      </li>
+      <li>
+        <a [routerLink]="['department']">
+          List
+        </a>
+      </li>
+    </ul>
+  </li>
+  <li [routerLinkActive]="['link-active']" *ngIf="isAdmin">
+    <a class="nav-link" [routerLink]="['state']">
+      <i></i>
+      States
+    </a>
+    <ul>
+      <li>
+        <a [routerLink]="['state/create-state']">
+          Create
+        </a>
+      </li>
+      <li>
+        <a [routerLink]="['state']">
+          List
+        </a>
+      </li>
+    </ul>
+  </li>
+  <li [routerLinkActive]="['link-active']" *ngIf="isAdmin">
+    <a [routerLink]="['doctor']">
+      Doctors
+    </a>
+    <ul>
+      <li>
+        <a [routerLink]="['doctor/create-doctor']">
+          Create
+        </a>
+      </li>
+      <li>
+        <a [routerLink]="['doctor']">
+          List
+        </a>
+      </li>
+    </ul>
+  </li>
+  <li [routerLinkActive]="['link-active']" *ngIf="isReception">
+    <a [routerLink]="['patient']">
+      Patients Details
+    </a>
+  </li>
+  <li [routerLinkActive]="['link-active']" *ngIf="isDoctor">
+    <a [routerLink]="['opdDetails']">
+      Opd
+    </a>
+  </li>
+
+  <li [routerLinkActive]="['link-active']" *ngIf="isDoctor">
+    <a routerLink="{{currentOpdLink}}">
+      Toda's Opd
+    </a>
+  </li>
+</ul>
