@@ -220,7 +220,7 @@ namespace Flowsoft.DataServices.Services
             var opd = _opdRepository.Get().SingleOrDefault(p => p.Id == obj.Id);
             opd.OpdNotes = obj.OpdNotes;
             opd.Prescription = obj.Prescription;
-            _opdRepository.Update(opd);
+          return  _opdRepository.Update(opd);
         }
     }
 }

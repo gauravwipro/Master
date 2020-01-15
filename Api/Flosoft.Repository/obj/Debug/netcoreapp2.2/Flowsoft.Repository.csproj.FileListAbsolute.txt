@@ -20,3 +20,14 @@ C:\Gaurav\Code\Api\Flosoft.Repository\obj\Debug\netcoreapp2.2\Flowsoft.Repositor
 C:\Gaurav\Code\Api\Flosoft.Repository\obj\Debug\netcoreapp2.2\Flowsoft.Repository.csproj.CopyComplete
 C:\Gaurav\Code\Api\Flosoft.Repository\obj\Debug\netcoreapp2.2\Flowsoft.Repository.dll
 C:\Gaurav\Code\Api\Flosoft.Repository\obj\Debug\netcoreapp2.2\Flowsoft.Repository.pdb
+E:\HMS\Api\Flosoft.Repository\bin\Debug\netcoreapp2.2\Flowsoft.Repository.deps.json
+E:\HMS\Api\Flosoft.Repository\bin\Debug\netcoreapp2.2\Flowsoft.Repository.dll
+E:\HMS\Api\Flosoft.Repository\bin\Debug\netcoreapp2.2\Flowsoft.Repository.pdb
+E:\HMS\Api\Flosoft.Repository\bin\Debug\netcoreapp2.2\Flowsoft.Domain.dll
+E:\HMS\Api\Flosoft.Repository\bin\Debug\netcoreapp2.2\Flowsoft.Domain.pdb
+E:\HMS\Api\Flosoft.Repository\obj\Debug\netcoreapp2.2\Flowsoft.Repository.csprojResolveAssemblyReference.cache
+E:\HMS\Api\Flosoft.Repository\obj\Debug\netcoreapp2.2\Flowsoft.Repository.csproj.CoreCompileInputs.cache
+E:\HMS\Api\Flosoft.Repository\obj\Debug\netcoreapp2.2\Flowsoft.Repository.AssemblyInfoInputs.cache
+E:\HMS\Api\Flosoft.Repository\obj\Debug\netcoreapp2.2\Flowsoft.Repository.AssemblyInfo.cs
+E:\HMS\Api\Flosoft.Repository\obj\Debug\netcoreapp2.2\Flowsoft.Repository.dll
+E:\HMS\Api\Flosoft.Repository\obj\Debug\netcoreapp2.2\Flowsoft.Repository.pdb

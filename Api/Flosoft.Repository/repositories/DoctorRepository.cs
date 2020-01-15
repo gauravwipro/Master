@@ -8,7 +8,7 @@ using System.Linq;
 
 namespace Flowsoft.Repository.repositories
 {
-    class DoctorRepository : IDoctorRepository
+   public class DoctorRepository : IDoctorRepository
     {
         IUnitOfWork _unitOfWork;
         public DoctorRepository(IUnitOfWork unitOfWork)

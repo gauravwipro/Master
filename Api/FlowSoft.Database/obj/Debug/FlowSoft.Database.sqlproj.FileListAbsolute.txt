@@ -1,0 +1,9 @@
+E:\HMS\Api\FlowSoft.Database\bin\Debug\FlowSoft.Database.dacpac
+E:\HMS\Api\FlowSoft.Database\bin\Debug\FlowSoft.Database.dll
+E:\HMS\Api\FlowSoft.Database\bin\Debug\FlowSoft.Database.pdb
+E:\HMS\Api\FlowSoft.Database\obj\Debug\Model.xml
+E:\HMS\Api\FlowSoft.Database\obj\Debug\refactor.xml
+E:\HMS\Api\FlowSoft.Database\obj\Debug\postdeploy.sql
+E:\HMS\Api\FlowSoft.Database\obj\Debug\predeploy.sql
+E:\HMS\Api\FlowSoft.Database\obj\Debug\FlowSoft.Database.dll
+E:\HMS\Api\FlowSoft.Database\obj\Debug\FlowSoft.Database.pdb

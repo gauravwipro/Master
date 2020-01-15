@@ -31,7 +31,7 @@ namespace Flowsoft.Hms.Controllers
         [Route("api/Doctor/Index")]
         public IEnumerable<Doctors> Index()
         {
-            return doctorService.GetAll();
+            return doctorService.Get();
         }
 
         [HttpPost]
@@ -45,14 +45,14 @@ namespace Flowsoft.Hms.Controllers
         [Route("api/Doctor/Details/{id}")]
         public Doctors Details(int id)
         {
-            return doctorService.Get(id);
+            return doctorService.GetById(id);
         }
 
         [HttpGet]
         [Route("api/Doctor/GetDepartmentList")]
         public IEnumerable<Departments> GetDepartmentList()
         {
-            return departmentService.GetAll();
+            return departmentService.Get();
         }
 
         [HttpGet]
@@ -66,14 +66,14 @@ namespace Flowsoft.Hms.Controllers
         [Route("api/Doctor/GetStateList")]
         public IEnumerable<States> GetStateList()
         {
-            return stateService.GetAll();
+            return stateService.Get();
         }
 
         [HttpGet]
         [Route("api/Doctor/GetGenderList")]
         public IEnumerable<Genders> GetGenderList()
         {
-            return genderService.GetAll();
+            return genderService.Get();
         }
         [HttpPut]
         [Route("api/Doctor/Edit")]

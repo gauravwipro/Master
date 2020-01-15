@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Flowsoft.Domain", "Flowsoft
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Flowsoft.Service", "Flowsoft.Service\Flowsoft.Service.csproj", "{ED6645CD-3661-4380-BAA7-D62950543AAD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flowsoft.Repository", "Flosoft.Repository\Flowsoft.Repository.csproj", "{D0107C89-9129-43A7-9E12-E06C1DDF0282}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Flowsoft.Repository", "Flosoft.Repository\Flowsoft.Repository.csproj", "{D0107C89-9129-43A7-9E12-E06C1DDF0282}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "FlowSoft.Database", "FlowSoft.Database\FlowSoft.Database.sqlproj", "{3605732C-5BB2-4187-A4CE-01922ACB39AF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -83,6 +85,24 @@ Global
 		{D0107C89-9129-43A7-9E12-E06C1DDF0282}.Release|x64.Build.0 = Release|Any CPU
 		{D0107C89-9129-43A7-9E12-E06C1DDF0282}.Release|x86.ActiveCfg = Release|Any CPU
 		{D0107C89-9129-43A7-9E12-E06C1DDF0282}.Release|x86.Build.0 = Release|Any CPU
+		{3605732C-5BB2-4187-A4CE-01922ACB39AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3605732C-5BB2-4187-A4CE-01922ACB39AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3605732C-5BB2-4187-A4CE-01922ACB39AF}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{3605732C-5BB2-4187-A4CE-01922ACB39AF}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{3605732C-5BB2-4187-A4CE-01922ACB39AF}.Debug|x64.Build.0 = Debug|Any CPU
+		{3605732C-5BB2-4187-A4CE-01922ACB39AF}.Debug|x64.Deploy.0 = Debug|Any CPU
+		{3605732C-5BB2-4187-A4CE-01922ACB39AF}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3605732C-5BB2-4187-A4CE-01922ACB39AF}.Debug|x86.Build.0 = Debug|Any CPU
+		{3605732C-5BB2-4187-A4CE-01922ACB39AF}.Debug|x86.Deploy.0 = Debug|Any CPU
+		{3605732C-5BB2-4187-A4CE-01922ACB39AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3605732C-5BB2-4187-A4CE-01922ACB39AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3605732C-5BB2-4187-A4CE-01922ACB39AF}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{3605732C-5BB2-4187-A4CE-01922ACB39AF}.Release|x64.ActiveCfg = Release|Any CPU
+		{3605732C-5BB2-4187-A4CE-01922ACB39AF}.Release|x64.Build.0 = Release|Any CPU
+		{3605732C-5BB2-4187-A4CE-01922ACB39AF}.Release|x64.Deploy.0 = Release|Any CPU
+		{3605732C-5BB2-4187-A4CE-01922ACB39AF}.Release|x86.ActiveCfg = Release|Any CPU
+		{3605732C-5BB2-4187-A4CE-01922ACB39AF}.Release|x86.Build.0 = Release|Any CPU
+		{3605732C-5BB2-4187-A4CE-01922ACB39AF}.Release|x86.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

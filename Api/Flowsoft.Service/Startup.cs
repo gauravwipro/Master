@@ -54,7 +54,7 @@ namespace Flowsoft.Service
             }));
 
             byte[] key = this.GetTokenSecretKey(services);
-            this.RegisterDatabase(services);
+            RegisterDatabase(services);
             services.AddAuthentication((Action<AuthenticationOptions>)(x =>
             {
                 x.DefaultAuthenticateScheme = "Bearer";
@@ -71,7 +71,8 @@ namespace Flowsoft.Service
                     ValidateAudience = false
                 };
             }));
-            Startup.RegisterServices(services);
+            RegisterServices(services);
+            RegisterRepositories(services);
             services.AddSwaggerGen((Action<SwaggerGenOptions>)(c =>
             {
                 c.SwaggerDoc("v1", new Info()
@@ -97,6 +98,19 @@ namespace Flowsoft.Service
             }));
         }
 
+        private static void RegisterRepositories(IServiceCollection services)
+        {
+            services.AddScoped<IDepartmentRepository, DepartmentRepository>();
+            services.AddScoped<IDoctorRepository, DoctorRepository>();
+            services.AddScoped<IStateRepository, StateRepository>();
+            services.AddScoped<IDepartmentRepository, DepartmentRepository>();
+            services.AddScoped<IPatientAdmissionRepository, PatientAdmissionRepository>();
+            services.AddScoped<IPatientRepository, PatientRepository>();
+            services.AddScoped<IGenderRepository, GenderRepository>();
+            services.AddScoped<IOpdRepository, OpdRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
+        }
+
         private void RegisterDatabase(IServiceCollection services)
         {
             IConfigurationSection section = this.Configuration.GetSection("ConnectionStrings");
@@ -108,7 +122,7 @@ namespace Flowsoft.Service
         private byte[] GetTokenSecretKey(IServiceCollection services)
         {
             IConfigurationSection section = this.Configuration.GetSection("AppSettings");
-            services.Configure<AppSettings>((IConfiguration)section);
+            services.Configure<AppSettings>(section);
             return Encoding.ASCII.GetBytes(section.Get<AppSettings>().Secret);
         }
 
@@ -116,6 +130,7 @@ namespace Flowsoft.Service
         {
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IDataContext, EcomContext>();
+
             services.AddScoped<IDoctorService, DoctorService>();
             services.AddScoped<IStateService, StateService>();
             services.AddScoped<IDepartmentService, DepartmentService>();
@@ -125,7 +140,9 @@ namespace Flowsoft.Service
             services.AddScoped<IOpdService, OpdService>();
             services.AddScoped<IOpdService, OpdService>();
             services.AddScoped<IUnitOfWork, UnitOfWork<EcomContext>>();
-            services.AddScoped<IDepartmentRepository, DepartmentRepository>();
+
+
+           
             
         }
 

@@ -25,7 +25,7 @@ namespace Flowsoft.Repository.repositories
 
         public List<Users> Get()
         {
-            return _unitOfWork.GetRepository<Users>().GetPagedList().Items.ToList();
+            return _unitOfWork.GetRepository<Users>().GetAll().Include(o => o.Role).ToList();
         }
 
         public Users GetById(int id)

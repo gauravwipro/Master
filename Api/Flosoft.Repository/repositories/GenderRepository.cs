@@ -8,7 +8,7 @@ using System.Linq;
 
 namespace Flowsoft.Repository.repositories
 {
-    class GenderRepository : IGenderRepository
+    public class GenderRepository : IGenderRepository
     {
         IUnitOfWork _unitOfWork;
         public GenderRepository(IUnitOfWork unitOfWork)

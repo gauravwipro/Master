@@ -1,14 +1,21 @@
-<ul class="nav">
-  <li [routerLinkActive]="['link-active']" *ngIf="isAdmin">
-    <a [routerLink]="['/home']">
-      <i></i>
+<ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+<li class="nav-item" [routerLinkActive]="['link-active']" *ngIf="isAdmin">
+  <a  [routerLink]="['/home']" class="nav-link">
+    <i class="nav-icon fas fa-copy"></i>
+    <p>
       Home
-    </a>
+    </p>
+  </a>
+</li>
 
-  </li>
-  <li [routerLinkActive]="['link-active']" *ngIf="isAdmin">
+
+  
+  <li  class="nav-item" [routerLinkActive]="['link-active']" *ngIf="isAdmin">
     <a [routerLink]="['department']">
+      <i class="nav-icon fas fa-copy"></i>
+    <p>
       Departments
+    </p>
     </a>
     <ul>
       <li>

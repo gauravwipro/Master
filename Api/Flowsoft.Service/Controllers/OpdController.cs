@@ -25,7 +25,7 @@ namespace Flowsoft.Hms.Controllers
         [Route("api/Opd/Index")]
         public IEnumerable<Opds> Index()
         {
-            return opdService.GetAll();
+            return opdService.Get();
         }
 
         [HttpPost]
@@ -40,7 +40,7 @@ namespace Flowsoft.Hms.Controllers
         [Route("api/Opd/Details/{id}")]
         public Opds Details(int id)
         {
-            return opdService.Get(id);
+            return opdService.GetById(id);
         }
 
         [HttpGet]

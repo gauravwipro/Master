@@ -25,7 +25,7 @@ namespace Flowsoft.Hms.Controllers
         [Route("api/State/Index")]
         public IEnumerable<States> Index()
         {
-            return stateService.GetAll();
+            return stateService.Get();
         }
 
         [HttpPost]
@@ -39,7 +39,7 @@ namespace Flowsoft.Hms.Controllers
         [Route("api/State/Details/{id}")]
         public States Details(int id)
         {
-            return stateService.Get(id);
+            return stateService.GetById(id);
         }
 
         [HttpPut]

@@ -16,6 +16,7 @@ using Microsoft.IdentityModel.Tokens;
 namespace Flowsoft.Hms.Controllers
 {
     [Produces("application/json")]
+    [EnableCors("CORS")]
     public class UsersController : ControllerBase
     {
         private IUserService _userService;

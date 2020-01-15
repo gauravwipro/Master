@@ -325,7 +325,8 @@
       "Flowsoft.DataServices/1.0.0": {
         "dependencies": {
           "Flowsoft.Data": "1.0.0",
-          "Flowsoft.Domain": "1.0.0"
+          "Flowsoft.Domain": "1.0.0",
+          "Flowsoft.Repository": "1.0.0"
         },
         "runtime": {
           "Flowsoft.DataServices.dll": {}

@@ -25,7 +25,7 @@ namespace Flowsoft.Hms.Controllers
         [Route("api/PatientAdmission/Index")]
         public IEnumerable<PatientAdmission> Index()
         {
-            return patientAdmissionService.GetAll();
+            return patientAdmissionService.Get();
         }
 
         [HttpPost]
@@ -39,7 +39,7 @@ namespace Flowsoft.Hms.Controllers
         [Route("api/PatientAdmission/Details/{id}")]
         public PatientAdmission Details(int id)
         {
-            return patientAdmissionService.Get(id);
+            return patientAdmissionService.GetById(id);
         }
 
         [HttpPut]
